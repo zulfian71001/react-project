@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
 const DetailProduct = () => {
-const {userId}= useParams()
+const {id}= useParams()
   return (
     <div>
-      {userId}
+      {id}
     </div>
   )
 }

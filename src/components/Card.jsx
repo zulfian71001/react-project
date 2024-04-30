@@ -1,26 +1,14 @@
+import { Link } from "react-router-dom";
 import "../App.css";
-import { useState, useEffect } from "react";
 
 const Card = (props) => {
-  const { title, desc } = props;
-  const [changeTitle, setChangeTitle] = useState("");
-  const changeValue = () => {
-    setChangeTitle("FULLSTACk WEB DEVELOPMENT");
-  };
-
-  useEffect(() => {
-    if (changeTitle === "FULLSTACk WEB DEVELOPMENT") {
-      setChangeTitle("title sudah berubah");
-    }
-  });
+  const { title, image, id } = props;
 
   return (
-    <div className="card">
-      <h2>{title}</h2>
-      <p>{desc}</p>
-      <p>{changeTitle}</p>
-      <button onClick={() => changeValue()}>change the value</button>
-    </div>
+      <Link className="w-72 h-80 rounded-md bg-cyan-50 text-black" to={`/product/${id}`}>
+        <img src={image} alt="gamber" className="w-full h-1/2 object-contain"/>
+        <h2>{title}</h2>
+    </Link>
   );
 };
 
